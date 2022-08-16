@@ -11,6 +11,7 @@ SRCS	= main.c\
 	  ft_wrong_arg.c\
 	  ft_strlen.c\
 	  push_swap_operations.c\
+	  ft_bubble_sort.c\
 
 SRCS_B	= 
 

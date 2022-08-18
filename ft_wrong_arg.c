@@ -1,15 +1,17 @@
 #include "push_swap.h"
 
-int	ft_wrong_arg(char *arg)
+int	ft_wrong_arg(char *a)
 {
 	int	i;
 	int	result;
 
 	result = 0;
 	i = -1;
-	while (arg[++i])
+	if ((a[0] != '-') || (a[0] != '+'))
+		i++;
+	while (a[++i])
 	{
-		if (!ft_isdigit(arg[i]))
+		if (!ft_isdigit(a[i]))
 			result = 1;
 	}
 	return (result);

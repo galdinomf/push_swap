@@ -12,6 +12,11 @@ SRCS	= main.c\
 	  ft_strlen.c\
 	  push_swap_operations.c\
 	  ft_bubble_sort.c\
+	  ft_sort_3A.c\
+	  ft_sort_5A.c\
+	  ft_itoa.c\
+	  ft_strcmp.c\
+	  ft_sort_2A.c\
 
 SRCS_B	= 
 

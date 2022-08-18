@@ -24,13 +24,18 @@ int	ft_isdigit(int c);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int	ft_wrong_arg(char *arg);
 size_t	ft_strlen(char *str);
-void	ft_swap(t_list **stackX);
-void	ft_push(t_list **stackX, t_list **stackY);
-void	ft_rotate(t_list **stackX);
-void	ft_reverse_rotate(t_list **stackX);
+void	ft_swap(t_list **stackX, char stack_letter);
+void	ft_push(t_list **stackX, t_list **stackY, char stack_letter);
+void	ft_rotate(t_list **stackX, char stack_letter);
+void	ft_reverse_rotate(t_list **stackX, char stack_letter);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 int	ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_bubble_sort(int *arr, int size_arr);
+void	ft_sort_3A(t_list **stackA);
+void	ft_sort_5A(t_list **stackA, t_list **stackB);
+char	*ft_itoa(int n);
+int	ft_strcmp(char *s1, char *s2);
+void	ft_sort_2A(t_list **stackA);
 
 #endif

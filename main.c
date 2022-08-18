@@ -4,11 +4,12 @@ int	ft_check_and_read(int argc, char *argv[], int *argv2)
 {
 	int	i;
 	int	j;
+	//int	last_digit;
 
 	i = 0;
 	while (argv[++i])
 	{
-		if (ft_wrong_arg(argv[i]))
+		if ((ft_wrong_arg(argv[i])) || (argv2 == NULL))
 			return (1);
 		argv2[i - 1] = ft_atoi(argv[i]);
 		j = -1;
@@ -17,7 +18,11 @@ int	ft_check_and_read(int argc, char *argv[], int *argv2)
 			if (argv2[j] == argv2[i - 1])
 				return (1);
 		}
-		if (argv2[i - 1] % 10 != argv[i][ft_strlen(argv[i]) - 1] - '0')
+		//last_digit = argv2[i - 1] % 10;
+		//if (argv2[i - 1] < 0)
+		//	last_digit *= -1;
+		//if (last_digit != argv[i][ft_strlen(argv[i]) - 1] - '0')
+		if (ft_strcmp(ft_itoa(argv2[i-1]), argv[i]))
 			return (1);
 	}
 	ft_bubble_sort(argv2, argc - 1);
@@ -72,15 +77,25 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	stackB = NULL;
-	ft_push(&stackA, &stackB);
-	ft_push(&stackA, &stackB);
-	ft_push(&stackA, &stackB);
-	printf("\n stackA :");
-	ft_lstiter(stackA, printf_node);
-	printf("\n stackB :");
-	ft_lstiter(stackB, printf_node);
-	printf("\n");
+	//ft_push(&stackA, &stackB);
+	//ft_push(&stackA, &stackB);
+	//ft_push(&stackA, &stackB);
+	//printf("\n stackA :");
+	//ft_lstiter(stackA, printf_node);
+	if (ft_lstsize(stackA) == 3)
+	ft_sort_3A(&stackA);
+	if (ft_lstsize(stackA) == 2)
+	ft_sort_2A(&stackA);
+	if (ft_lstsize(stackA) == 5)
+	ft_sort_5A(&stackA, &stackB);
+	//printf("\n stackA sorted:");
+	//ft_lstiter(stackA, printf_node);
+	//printf("\n stackB :");
+	//ft_lstiter(stackB, printf_node);
+	//printf("\n");
+	if (ft_lstsize(stackA))
 	ft_lstclear(&stackA, free);
+	if (ft_lstsize(stackB))
 	ft_lstclear(&stackB, free);
 	//printf("%d\n", *((int *) stackA->content));
 	return (0);
